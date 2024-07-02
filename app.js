@@ -28,6 +28,9 @@ app.use(helmet())
 // security
 
 // routes
+app.use('/', (req, res) => {
+  res.send('<h1>Jobs Api</h1>')
+})
 app.use('/api/v1/auth', authRoute)
 app.use('/api/v1/jobs', authMiddleWare, jobRoute)
 
